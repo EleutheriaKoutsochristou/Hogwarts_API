@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Expelliarmus",
+    "type": "Spell",
+    "element": "Lightning",
+    "power": 80,
+    "rarity": "Epic",
+    "description": "Disarms opponent.",
+    "status": "Unlearned"
+  }
+]

@@ -1,0 +1,575 @@
+{
+  "info": {
+    "_postman_id": "hogwarts-api-collection",
+    "name": "Hogwarts Magic Items API",
+    "description": "CRUD API for Magic Items - Spells and Potions",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Read Operations",
+      "item": [
+        {
+          "name": "Get All Magic Items",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/magic-items",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "magic-items"
+              ]
+            },
+            "description": "Επιστροφή όλων των magic items"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Items by Type (Spell)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/magic-items?type=Spell",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "magic-items"
+              ],
+              "query": [
+                {
+                  "key": "type",
+                  "value": "Spell"
+                }
+              ]
+            },
+            "description": "Επιστροφή μόνο ξορκιών (Spells)"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Items by Type (Potion)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/magic-items?type=Potion",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "magic-items"
+              ],
+              "query": [
+                {
+                  "key": "type",
+                  "value": "Potion"
+                }
+              ]
+            },
+            "description": "Επιστροφή μόνο φίλτρων (Potions)"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Items by Rarity (Legendary)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/magic-items?rarity=Legendary",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "magic-items"
+              ],
+              "query": [
+                {
+                  "key": "rarity",
+                  "value": "Legendary"
+                }
+              ]
+            },
+            "description": "Επιστροφή θρυλικών αντικειμένων"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Items by Rarity (Epic)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/magic-items?rarity=Epic",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "magic-items"
+              ],
+              "query": [
+                {
+                  "key": "rarity",
+                  "value": "Epic"
+                }
+              ]
+            },
+            "description": "Επιστροφή επικών αντικειμένων"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Items by Status (Learned)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/magic-items?status=Learned",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "magic-items"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "Learned"
+                }
+              ]
+            },
+            "description": "Επιστροφή μαθημένων ξορκιών"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Items by Status (Unlearned)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/magic-items?status=Unlearned",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "magic-items"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "Unlearned"
+                }
+              ]
+            },
+            "description": "Επιστροφή μη μαθημένων ξορκιών"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Items by Power Range",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/magic-items?minPower=50&maxPower=100",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "magic-items"
+              ],
+              "query": [
+                {
+                  "key": "minPower",
+                  "value": "50"
+                },
+                {
+                  "key": "maxPower",
+                  "value": "100"
+                }
+              ]
+            },
+            "description": "Επιστροφή αντικειμένων με δύναμη 50-100"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Items - Complex Filter",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/magic-items?type=Spell&rarity=Wow&minPower=90",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "magic-items"
+              ],
+              "query": [
+                {
+                  "key": "type",
+                  "value": "Spell"
+                },
+                {
+                  "key": "rarity",
+                  "value": "Wow"
+                },
+                {
+                  "key": "minPower",
+                  "value": "90"
+                }
+              ]
+            },
+            "description": "Φίλτρο: Ξόρκια Wow rarity με δύναμη 90+ (Avada Kedavra)"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Create Operation",
+      "item": [
+        {
+          "name": "Create Wingardium Leviosa",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Wingardium Leviosa\",\n  \"type\": \"Spell\",\n  \"element\": \"Ice\",\n  \"power\": 1,\n  \"rarity\": \"Common\",\n  \"description\": \"Levitation\",\n  \"status\": \"Unlearned\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/magic-items",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "magic-items"
+              ]
+            },
+            "description": "Levitation spell"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Avada Kedavra",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Avada Kedavra\",\n  \"type\": \"Spell\",\n  \"element\": \"Fire\",\n  \"power\": 95,\n  \"rarity\": \"Wow\",\n  \"description\": \"Killing\",\n  \"status\": \"Unlearned\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/magic-items",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "magic-items"
+              ]
+            },
+            "description": "Killing curse"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Accio",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Accio\",\n  \"type\": \"Spell\",\n  \"element\": \"Lightning\",\n  \"power\": 40,\n  \"rarity\": \"Rare\",\n  \"description\": \"Summoning charm\",\n  \"status\": \"Unlearned\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/magic-items",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "magic-items"
+              ]
+            },
+            "description": "Summoning charm"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Ageing Potion",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Ageing Potion\",\n  \"type\": \"Potion\",\n  \"element\": \"Earth\",\n  \"power\": 60,\n  \"rarity\": \"Epic\",\n  \"description\": \"The Ageing Potion is a powerful blend that causes the person who drinks it to become temporarily older\",\n  \"status\": \"Unbrewed\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/magic-items",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "magic-items"
+              ]
+            },
+            "description": "Ageing potion"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Amortentia",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Amortentia\",\n  \"type\": \"Potion\",\n  \"element\": \"Fire\",\n  \"power\": 99,\n  \"rarity\": \"Legendary\",\n  \"description\": \"Love potion\",\n  \"status\": \"Unbrewed\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/magic-items",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "magic-items"
+              ]
+            },
+            "description": "Love potion"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Update Operation",
+      "item": [
+        {
+          "name": "Update Item Status",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"Learned\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/magic-items/{{item_id}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "magic-items",
+                "{{item_id}}"
+              ]
+            },
+            "description": "Ενημέρωση κατάστασης: Μη μαθημένο → Μαθημένο. Αντικατάστησε {{item_id}} με το πραγματικό ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Item Power",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"power\": 55\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/magic-items/{{item_id}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "magic-items",
+                "{{item_id}}"
+              ]
+            },
+            "description": "Ενημέρωση δύναμης αντικειμένου. Αντικατάστησε {{item_id}} με το πραγματικό ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Multiple Fields",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"power\": 60,\n  \"status\": \"Learned\",\n  \"rarity\": \"Rare\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/magic-items/{{item_id}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "magic-items",
+                "{{item_id}}"
+              ]
+            },
+            "description": "Ενημέρωση πολλών πεδίων ταυτόχρονα. Αντικατάστησε {{item_id}} με το πραγματικό ID"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Delete Operation",
+      "item": [
+        {
+          "name": "Delete Item by ID",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/magic-items/{{item_id}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "magic-items",
+                "{{item_id}}"
+              ]
+            },
+            "description": "Διαγραφή ενός αντικειμένου. Αντικατάστησε {{item_id}} με το πραγματικό ID"
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "item_id",
+      "value": "",
+      "type": "string",
+      "description": "Το ID του magic item που θές να ενημερώσεις ή να διαγράψεις"
+    },
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ]
+}
